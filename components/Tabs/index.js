@@ -22,15 +22,18 @@ function createTab(topic) {
 const tabEntryPoint = document.querySelector('.topics');
 
 axios
+    // get the topics from API
     .get("https://lambda-times-backend.herokuapp.com/topics")
     .then (response => {
+        // put the topics into a new array
         const topicsArray = response.data.topics;
-        
+        // iterate over the topics and create/add the new tabs
         topicsArray.forEach(topic => {
             const newTab = createTab(topic);
             tabEntryPoint.appendChild(newTab);
         });
     })
+    // catch any errors and display them in the console log
     .catch(error => {
         console.log(error);
     });
