@@ -48,6 +48,7 @@ function createCard(articleHeadline, articleAuthorPhoto, articleAuthorName) {
     return card;
 }
 
+// Loop over the articles by topic, creating a card each time and appending the new card
 function loopOverTopics(cardObject, topic) {
     for(let i = 0 ; i < cardObject[topic].length ; i++) {
         const newCard = createCard(cardObject[topic][i].headline, cardObject[topic][i].authorPhoto, cardObject[topic][i].authorName);
@@ -57,6 +58,7 @@ function loopOverTopics(cardObject, topic) {
 
 const cardEntryPoint = document.querySelector('.cards-container');
 
+// get the data from the server and create new cards based on the response
 axios
     .get('https://lambda-times-backend.herokuapp.com/articles')
     .then(response => {
