@@ -35,5 +35,5 @@ axios
     })
     // catch any errors and display them in the console log
     .catch(error => {
-        console.log(error);
+        console.log("Topic Get Error: " + error);
     });
