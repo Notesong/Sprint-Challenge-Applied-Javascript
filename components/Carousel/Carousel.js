@@ -52,6 +52,6 @@ function createCarousel() {
   return carousel;
 }
 
-const carouselEntryPoint = document.querySelector('.carousel-container');
-const newCarousel = createCarousel();
-carouselEntryPoint.appendChild(newCarousel);
+// const carouselEntryPoint = document.querySelector('.carousel-container');
+// const newCarousel = createCarousel();
+// carouselEntryPoint.appendChild(newCarousel);
